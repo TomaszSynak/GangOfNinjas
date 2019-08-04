@@ -33,9 +33,7 @@ namespace HiddenNinja
 
                         return new WebHostBuilder()
                                     .UseKestrel()
-                                    .ConfigureServices(
-                                        services => services
-                                            .AddSingleton<StatelessServiceContext>(serviceContext))
+                                    .ConfigureServices(services => services.AddSingleton(serviceContext))
                                     .UseContentRoot(Directory.GetCurrentDirectory())
                                     .UseStartup<Startup>()
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)

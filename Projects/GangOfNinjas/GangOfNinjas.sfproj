@@ -33,7 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HiddenNinja\HiddenNinja.csproj">
-      <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/api/values</ServiceLaunchUrl>
+      <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
     </ProjectReference>
     <ProjectReference Include="..\StatelessNinja\StatelessNinja.csproj">
       <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
