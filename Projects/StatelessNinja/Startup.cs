@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Fabric;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +10,12 @@ namespace StatelessNinja
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly StatelessServiceContext _serviceContext;
+
+        public Startup(IConfiguration configuration, StatelessServiceContext serviceContext)
         {
             Configuration = configuration;
+            _serviceContext = serviceContext;
         }
 
         public IConfiguration Configuration { get; }
@@ -30,13 +34,16 @@ namespace StatelessNinja
                 app.UseDeveloperExceptionPage();
             }
 
+
+            //var appName = _serviceContext.CodePackageActivationContext.ApplicationName;
+            //app.RunHttpServiceGateway("/hidden", $"{appName}/HiddenNinja");
+            //app.RunHttpServiceGateway("/hidden/api", $"{appName}/HiddenNinja/api/hidden");
+
             app.Run(async handler =>
             {
                 handler.Response.StatusCode = 200;
                 await handler.Response.WriteAsync($"Healthy <br><br> --- <br> Best <br> <i><small>{nameof(StatelessNinja)}</small></i>");
             });
-
-            app.UseMvc();
         }
     }
 }

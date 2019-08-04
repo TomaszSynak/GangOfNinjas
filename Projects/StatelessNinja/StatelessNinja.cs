@@ -39,7 +39,7 @@ namespace StatelessNinja
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                                     .UseUrls(url)
                                     .Build();
-                    }))
+                    }), "Gateway")
             };
         }
     }
