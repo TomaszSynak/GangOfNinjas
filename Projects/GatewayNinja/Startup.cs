@@ -1,4 +1,7 @@
-﻿using System.Fabric;
+﻿using System;
+using System.Fabric;
+using C3.ServiceFabric.HttpServiceGateway;
+using C3.ServiceFabric.HttpCommunication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -23,6 +26,7 @@ namespace GatewayNinja
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddServiceFabricHttpCommunication();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -35,15 +39,16 @@ namespace GatewayNinja
             }
 
 
-            //var appName = _serviceContext.CodePackageActivationContext.ApplicationName;
-            //app.RunHttpServiceGateway("/hidden", $"{appName}/HiddenNinja");
-            //app.RunHttpServiceGateway("/hidden/api", $"{appName}/HiddenNinja/api/hidden");
+            var appName = _serviceContext.CodePackageActivationContext.ApplicationName;
+            app.RunHttpServiceGateway("/hidden", $"{appName}/HiddenNinja");
 
-            app.Run(async handler =>
-            {
-                handler.Response.StatusCode = 200;
-                await handler.Response.WriteAsync($"Healthy <br><br> --- <br> Best <br> <i><small>{nameof(GatewayNinja)}</small></i>");
-            });
+            app.Map("", configuration =>
+                configuration.Run(async handler =>
+                {
+                    handler.Response.StatusCode = 200;
+                    await handler.Response.WriteAsync($"Healthy <br><br> --- <br> Best <br> <i><small>{nameof(GatewayNinja)}</small></i>");
+                })
+            );
         }
     }
 }
