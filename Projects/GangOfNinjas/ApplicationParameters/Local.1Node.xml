@@ -3,7 +3,7 @@
   <Parameters>
     <Parameter Name="HiddenNinja_ASPNETCORE_ENVIRONMENT" Value="Development" />
     <Parameter Name="HiddenNinja_InstanceCount" Value="1" />
-    <Parameter Name="StatelessNinja_ASPNETCORE_ENVIRONMENT" Value="Development" />
-    <Parameter Name="StatelessNinja_InstanceCount" Value="1" />
+    <Parameter Name="GatewayNinja_ASPNETCORE_ENVIRONMENT" Value="Development" />
+    <Parameter Name="GatewayNinja_InstanceCount" Value="1" />
   </Parameters>
 </Application>

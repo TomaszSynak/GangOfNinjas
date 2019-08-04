@@ -7,14 +7,14 @@ using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace StatelessNinja
+namespace GatewayNinja
 {
     /// <summary>
     /// The FabricRuntime creates an instance of this class for each service type instance.
     /// </summary>
-    internal sealed class StatelessNinja : StatelessService
+    internal sealed class GatewayNinja : StatelessService
     {
-        public StatelessNinja(StatelessServiceContext context)
+        public GatewayNinja(StatelessServiceContext context)
             : base(context)
         { }
 
@@ -39,7 +39,7 @@ namespace StatelessNinja
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                                     .UseUrls(url)
                                     .Build();
-                    }), "Gateway")
+                    }), "GatewayEndpoint")
             };
         }
     }

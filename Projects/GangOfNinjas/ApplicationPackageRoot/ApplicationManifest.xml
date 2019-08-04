@@ -3,8 +3,8 @@
   <Parameters>
     <Parameter Name="HiddenNinja_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
     <Parameter Name="HiddenNinja_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="StatelessNinja_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
-    <Parameter Name="StatelessNinja_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="GatewayNinja_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="GatewayNinja_InstanceCount" DefaultValue="-1" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion
        should match the Name and Version attributes of the ServiceManifest element defined in the
@@ -17,10 +17,10 @@
     </EnvironmentOverrides>
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="StatelessNinjaPkg" ServiceManifestVersion="1.0.0" />
+    <ServiceManifestRef ServiceManifestName="GatewayNinjaPkg" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
     <EnvironmentOverrides CodePackageRef="code">
-      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[StatelessNinja_ASPNETCORE_ENVIRONMENT]" />
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[GatewayNinja_ASPNETCORE_ENVIRONMENT]" />
     </EnvironmentOverrides>
   </ServiceManifestImport>
   <DefaultServices>
@@ -34,8 +34,8 @@
         <SingletonPartition />
       </StatelessService>
     </Service>
-    <Service Name="StatelessNinja" ServicePackageActivationMode="ExclusiveProcess">
-      <StatelessService ServiceTypeName="StatelessNinjaType" InstanceCount="[StatelessNinja_InstanceCount]">
+    <Service Name="GatewayNinja" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="GatewayNinjaType" InstanceCount="[GatewayNinja_InstanceCount]">
         <SingletonPartition />
       </StatelessService>
     </Service>

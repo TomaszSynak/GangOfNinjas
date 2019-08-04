@@ -1,9 +1,9 @@
-using Microsoft.ServiceFabric.Services.Runtime;
 using System;
 using System.Diagnostics;
 using System.Threading;
+using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace StatelessNinja
+namespace GatewayNinja
 {
     internal static class Program
     {
@@ -19,9 +19,9 @@ namespace StatelessNinja
                 // When Service Fabric creates an instance of this service type,
                 // an instance of the class is created in this host process.
 
-                ServiceRuntime.RegisterServiceAsync("StatelessNinjaType", context => new StatelessNinja(context)).GetAwaiter().GetResult();
+                ServiceRuntime.RegisterServiceAsync("GatewayNinjaType", context => new GatewayNinja(context)).GetAwaiter().GetResult();
 
-                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(StatelessNinja).Name);
+                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(GatewayNinja).Name);
 
                 // Prevents this host process from terminating so services keeps running.
                 Thread.Sleep(Timeout.Infinite);

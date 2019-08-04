@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace StatelessNinja
+namespace GatewayNinja
 {
     public class Startup
     {
@@ -42,7 +42,7 @@ namespace StatelessNinja
             app.Run(async handler =>
             {
                 handler.Response.StatusCode = 200;
-                await handler.Response.WriteAsync($"Healthy <br><br> --- <br> Best <br> <i><small>{nameof(StatelessNinja)}</small></i>");
+                await handler.Response.WriteAsync($"Healthy <br><br> --- <br> Best <br> <i><small>{nameof(GatewayNinja)}</small></i>");
             });
         }
     }

@@ -35,7 +35,7 @@
     <ProjectReference Include="..\HiddenNinja\HiddenNinja.csproj">
       <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
     </ProjectReference>
-    <ProjectReference Include="..\StatelessNinja\StatelessNinja.csproj">
+    <ProjectReference Include="..\GatewayNinja\GatewayNinja.csproj">
       <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
     </ProjectReference>
   </ItemGroup>
