@@ -3,6 +3,5 @@
   <Parameters>
     <Parameter Name="HiddenSamurai_InstanceCount" Value="-1" />
     <Parameter Name="HiddenNinja_InstanceCount" Value="-1" />
-    <Parameter Name="GatewayNinja_InstanceCount" Value="-1" />
   </Parameters>
 </Application>

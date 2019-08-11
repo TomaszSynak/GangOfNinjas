@@ -5,8 +5,6 @@
     <Parameter Name="HiddenSamurai_InstanceCount" DefaultValue="-1" />
     <Parameter Name="HiddenNinja_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
     <Parameter Name="HiddenNinja_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="GatewayNinja_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
-    <Parameter Name="GatewayNinja_InstanceCount" DefaultValue="-1" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion
        should match the Name and Version attributes of the ServiceManifest element defined in the
@@ -25,13 +23,6 @@
       <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[HiddenNinja_ASPNETCORE_ENVIRONMENT]" />
     </EnvironmentOverrides>
   </ServiceManifestImport>
-  <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="GatewayNinjaPkg" ServiceManifestVersion="1.0.0" />
-    <ConfigOverrides />
-    <EnvironmentOverrides CodePackageRef="code">
-      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[GatewayNinja_ASPNETCORE_ENVIRONMENT]" />
-    </EnvironmentOverrides>
-  </ServiceManifestImport>
   <DefaultServices>
     <!-- The section below creates instances of service types, when an instance of this
          application type is created. You can also create one or more instances of service type using the
@@ -45,11 +36,6 @@
     </Service>
     <Service Name="HiddenNinja" ServicePackageActivationMode="ExclusiveProcess">
       <StatelessService ServiceTypeName="HiddenNinjaType" InstanceCount="[HiddenNinja_InstanceCount]">
-        <SingletonPartition />
-      </StatelessService>
-    </Service>
-    <Service Name="GatewayNinja" ServicePackageActivationMode="ExclusiveProcess">
-      <StatelessService ServiceTypeName="GatewayNinjaType" InstanceCount="[GatewayNinja_InstanceCount]">
         <SingletonPartition />
       </StatelessService>
     </Service>
