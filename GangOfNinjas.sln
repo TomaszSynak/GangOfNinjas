@@ -7,9 +7,11 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "GangOfNinjas", "Projects\Ga
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{AD5CF9ED-5B82-4662-B885-3B2676313B93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayNinja", "Projects\GatewayNinja\GatewayNinja.csproj", "{3F7D13B3-9220-4FC2-8186-E6FF23C98FA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayNinja", "Projects\GatewayNinja\GatewayNinja.csproj", "{3F7D13B3-9220-4FC2-8186-E6FF23C98FA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenNinja", "Projects\HiddenNinja\HiddenNinja.csproj", "{E81AEDA0-FFCD-4BF3-8BBA-D863F870584B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiddenNinja", "Projects\HiddenNinja\HiddenNinja.csproj", "{E81AEDA0-FFCD-4BF3-8BBA-D863F870584B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenSamurai", "Projects\HiddenSamurai\HiddenSamurai.csproj", "{34A7898A-62B9-4503-B593-240CA934BC8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{E81AEDA0-FFCD-4BF3-8BBA-D863F870584B}.Debug|x64.Build.0 = Debug|x64
 		{E81AEDA0-FFCD-4BF3-8BBA-D863F870584B}.Release|x64.ActiveCfg = Release|x64
 		{E81AEDA0-FFCD-4BF3-8BBA-D863F870584B}.Release|x64.Build.0 = Release|x64
+		{34A7898A-62B9-4503-B593-240CA934BC8F}.Debug|x64.ActiveCfg = Debug|x64
+		{34A7898A-62B9-4503-B593-240CA934BC8F}.Debug|x64.Build.0 = Debug|x64
+		{34A7898A-62B9-4503-B593-240CA934BC8F}.Release|x64.ActiveCfg = Release|x64
+		{34A7898A-62B9-4503-B593-240CA934BC8F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{383AA792-5564-478B-8103-C3B81A71EE57} = {AD5CF9ED-5B82-4662-B885-3B2676313B93}
 		{3F7D13B3-9220-4FC2-8186-E6FF23C98FA1} = {AD5CF9ED-5B82-4662-B885-3B2676313B93}
 		{E81AEDA0-FFCD-4BF3-8BBA-D863F870584B} = {AD5CF9ED-5B82-4662-B885-3B2676313B93}
+		{34A7898A-62B9-4503-B593-240CA934BC8F} = {AD5CF9ED-5B82-4662-B885-3B2676313B93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72DB4DAE-71D9-4D7E-A726-407F5C50EA41}

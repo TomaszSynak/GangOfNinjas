@@ -32,12 +32,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HiddenNinja\HiddenNinja.csproj">
-      <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
-    </ProjectReference>
-    <ProjectReference Include="..\GatewayNinja\GatewayNinja.csproj">
-      <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
-    </ProjectReference>
+    <ProjectReference Include="..\HiddenNinja\HiddenNinja.csproj"/>
+    <ProjectReference Include="..\GatewayNinja\GatewayNinja.csproj"/>
+    <ProjectReference Include="..\HiddenSamurai\HiddenSamurai.csproj"/>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>
