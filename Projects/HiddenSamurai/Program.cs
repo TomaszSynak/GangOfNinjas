@@ -1,9 +1,10 @@
+using Microsoft.ServiceFabric.Services.Runtime;
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Microsoft.ServiceFabric.Services.Runtime;
+using System.Threading.Tasks;
 
-namespace GatewayNinja
+namespace HiddenSamurai
 {
     internal static class Program
     {
@@ -19,16 +20,17 @@ namespace GatewayNinja
                 // When Service Fabric creates an instance of this service type,
                 // an instance of the class is created in this host process.
 
-                ServiceRuntime.RegisterServiceAsync("GatewayNinjaType", context => new GatewayNinja(context)).GetAwaiter().GetResult();
+                ServiceRuntime.RegisterServiceAsync("HiddenSamuraiType",
+                    context => new HiddenSamurai(context)).GetAwaiter().GetResult();
 
-                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(GatewayNinja).Name);
+                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(HiddenSamurai).Name);
 
-                // Prevents this host process from terminating so services keeps running.
+                // Prevents this host process from terminating so services keeps running. 
                 Thread.Sleep(Timeout.Infinite);
             }
-            catch (Exception exception)
+            catch (Exception e)
             {
-                ServiceEventSource.Current.ServiceHostInitializationFailed(exception.ToString());
+                ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
                 throw;
             }
         }
